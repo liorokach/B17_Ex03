@@ -15,5 +15,13 @@ namespace OnElectricity
           {
                throw new NotImplementedException();
           }
+
+          public override List<string> GetEngineDetails()
+          {
+               List<string> details = new List<string>();
+               details.Add("electric");
+               details.AddRange(base.GetEngineDetails());
+               return details;
+          }
      }
 }

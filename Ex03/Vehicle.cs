@@ -25,18 +25,28 @@ namespace Vehicle
                {
                     m_wheels.Add(new Wheel(i_WheelCompany, i_CurrPressure, i_MaxPressure));
                }
-               if(i_FuelType == "electric")
+               if (i_FuelType == "electric")
                {
                     m_myEngine = new OnElectricity(i_CurrEnergy, i_MaxEnergy);
                }
-               else if(Enum.IsDefined(typeof(eFuelType), i_FuelType))
-               {
-                    m_myEngine = new OnFuel(i_CurrEnergy, i_MaxEnergy, i_FuelType);
-               }
                else
                {
-                    //// not valid engine
+                    eFuelType fuelType = (eFuelType)Enum.Parse(typeof(eFuelType), i_FuelType, true);
+                    if (Enum.IsDefined(typeof(eFuelType), fuelType))
+                    {
+                         m_myEngine = new OnFuel(i_CurrEnergy, i_MaxEnergy, i_FuelType);
+                    }
                }
+          }
+
+          public virtual List<string> GetVehicleDetails()
+          {
+               List<string> details = new List<string>();
+               details.Add(m_modelName);
+               details.Add(m_licenceNumber);
+               details.AddRange(m_wheels[0].GetWheelDetails());
+               details.AddRange(m_myEngine.GetEngineDetails());
+               return details; 
           }
 
           public string GetLicenceNumber()

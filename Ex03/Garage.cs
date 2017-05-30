@@ -60,7 +60,7 @@ namespace Garage
                List<string> vehicleDetails = new List<string>();
                if (m_garageDB.ContainsKey(i_LicenceNum))
                {
-                    vehicleDetails.Add(m_garageDB[i_LicenceNum].ToString());
+                    vehicleDetails = m_garageDB[i_LicenceNum].GetAllDetails();
                }
                else
                {

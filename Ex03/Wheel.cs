@@ -34,5 +34,14 @@ namespace Wheel
           {
                m_currentPressure = m_maxPressure;
           }
+
+          public List<string> GetWheelDetails()
+          {
+               List<string> details = new List<string>();
+               details.Add(m_producerName);
+               details.Add(m_currentPressure.ToString());
+               details.Add(m_maxPressure.ToString());
+               return details;
+          }
      }
 }

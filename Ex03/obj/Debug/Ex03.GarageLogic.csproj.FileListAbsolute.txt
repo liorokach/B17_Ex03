@@ -2,4 +2,3 @@ C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03\bin\Debug\Ex03.pd
 C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03\obj\Debug\Ex03.pdb
 C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03\bin\Debug\Ex03.dll
 C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03\obj\Debug\Ex03.dll
-C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03\obj\Debug\Ex03.GarageLogic.csprojResolveAssemblyReference.cache

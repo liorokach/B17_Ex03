@@ -17,6 +17,14 @@ namespace Engine
                m_maxEngineTime = i_MaxTime;
           }
 
+          public virtual List<string> GetEngineDetails()
+          {
+               List<string> details = new List<string>();
+               details.Add(m_engineRemainTime.ToString());
+               details.Add(m_maxEngineTime.ToString());
+               return details;
+          }
+
           public abstract void Refuel(float i_AddFuelQuantity, eFuelType i_fuelType);
 
           public void Refuel(float i_AddFuelQuantity) //// for electronic car

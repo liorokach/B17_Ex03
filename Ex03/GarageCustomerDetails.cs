@@ -39,5 +39,13 @@ namespace GarageCustomerDetails
           {
                m_myVehicle.PumpWheelsToMax();
           }
+
+          public List<string> GetAllDetails()
+          {
+               List<string> details = new List<string>();
+               details.AddRange(m_myVehicle.GetVehicleDetails());
+               details.Add(e_repairStatus.ToString());
+               return details;
+          }
      }
 }

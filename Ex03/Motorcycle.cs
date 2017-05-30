@@ -17,5 +17,14 @@ namespace Motorcycle
                m_engineCapacity = i_Capacity;
                e_licence = (eLicenceType)Enum.Parse(typeof(eLicenceType), i_Licence);
           }
+
+          public override List<string> GetVehicleDetails()
+          {
+               List<string> details = new List<string>();
+               details.Add(e_licence.ToString());
+               details.Add(m_engineCapacity.ToString());
+               details.AddRange(base.GetVehicleDetails());
+               return details;
+          }
      }
 }
