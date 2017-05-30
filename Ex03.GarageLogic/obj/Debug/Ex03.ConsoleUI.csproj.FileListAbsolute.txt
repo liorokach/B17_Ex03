@@ -1,0 +1,7 @@
+C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03.GarageLogic\bin\Debug\Ex03.GarageLogic.exe
+C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03.GarageLogic\bin\Debug\Ex03.GarageLogic.pdb
+C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03.GarageLogic\bin\Debug\Ex03.pdb
+C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03.GarageLogic\obj\Debug\Ex03.ConsoleUI.csprojResolveAssemblyReference.cache
+C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03.GarageLogic\obj\Debug\Ex03.GarageLogic.exe
+C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03.GarageLogic\obj\Debug\Ex03.GarageLogic.pdb
+C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03.GarageLogic\bin\Debug\Ex03.dll
