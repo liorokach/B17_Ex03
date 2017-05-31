@@ -8,6 +8,7 @@ namespace Vehicle
      using OnElectricity;
      using OnFuel;
      using enumFuelType;
+     using enumEngineType;
 
      public abstract class Vehicle
      {
@@ -25,11 +26,12 @@ namespace Vehicle
                {
                     m_wheels.Add(new Wheel(i_WheelCompany, i_CurrPressure, i_MaxPressure));
                }
-               if (i_FuelType == "electric")
+               eEngineType engine = (eEngineType)Enum.Parse(typeof(eEngineType), i_FuelType);
+               if (engine == eEngineType.OnElectric)
                {
                     m_myEngine = new OnElectricity(i_CurrEnergy, i_MaxEnergy);
                }
-               else
+               else //// need fixes with engine type
                {
                     eFuelType fuelType = (eFuelType)Enum.Parse(typeof(eFuelType), i_FuelType, true);
                     if (Enum.IsDefined(typeof(eFuelType), fuelType))
@@ -49,9 +51,12 @@ namespace Vehicle
                return details; 
           }
 
-          public string GetLicenceNumber()
+          public string LicenceNumber
           {
-               return m_licenceNumber;
+               get
+               {
+                    return m_licenceNumber;
+               }
           }
 
           public void PumpWheels(float i_AddPressure)
@@ -70,5 +75,14 @@ namespace Vehicle
                }
           }
 
+          public void AddFuel(eFuelType i_TypeOfFuel, float i_AmountToAdd)
+          {
+               m_myEngine.Refuel(i_AmountToAdd, i_TypeOfFuel);
+          }
+
+          public void ChargeBattery(float i_AmountToAdd)
+          {
+               m_myEngine.Refuel(i_AmountToAdd);
+          }
      }
 }

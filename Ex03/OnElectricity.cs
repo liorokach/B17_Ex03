@@ -13,7 +13,7 @@ namespace OnElectricity
 
           public override void Refuel(float i_AddFuelQuantity, eFuelType i_fuelType)
           {
-               throw new NotImplementedException();
+               throw new NotImplementedException(); ///// throw exception 
           }
 
           public override List<string> GetEngineDetails()

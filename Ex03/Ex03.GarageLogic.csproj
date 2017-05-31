@@ -37,9 +37,10 @@
   <ItemGroup>
     <Compile Include="Car.cs" />
     <Compile Include="eCarColor.cs" />
+    <Compile Include="eEngineType.cs" />
     <Compile Include="eFuelType.cs" />
     <Compile Include="Engine.cs" />
-    <Compile Include="eVehicleStatus  .cs" />
+    <Compile Include="eVehicleStatus.cs" />
     <Compile Include="Garage.cs" />
     <Compile Include="GarageCustomerDetails.cs" />
     <Compile Include="OnElectricity.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="Motorcycle.cs" />
     <Compile Include="Truck.cs" />
     <Compile Include="Vehicle.cs" />
+    <Compile Include="VehicleFactory.cs" />
     <Compile Include="Wheel.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -27,11 +27,15 @@ namespace Engine
 
           public abstract void Refuel(float i_AddFuelQuantity, eFuelType i_fuelType);
 
-          public void Refuel(float i_AddFuelQuantity) //// for electronic car
+          public void Refuel(float i_AddFuelQuantity)
           {
                if (m_engineRemainTime + i_AddFuelQuantity <= m_maxEngineTime)
                {
                     m_engineRemainTime += i_AddFuelQuantity;
+               }
+               else
+               {
+                    //// throw exception 
                }
           }
      }

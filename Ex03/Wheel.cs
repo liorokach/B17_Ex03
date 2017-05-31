@@ -26,7 +26,7 @@ namespace Wheel
                }
                else
                {
-                    ///exeption
+                    //// exception
                }
           }
 

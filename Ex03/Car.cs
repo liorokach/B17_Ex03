@@ -30,9 +30,9 @@ namespace Car
           public override List<string> GetVehicleDetails()
           {
                List<string> details = new List<string>();
+               details.AddRange(base.GetVehicleDetails());
                details.Add(e_color.ToString());
                details.Add(e_numOfDoors.ToString());
-               details.AddRange(base.GetVehicleDetails());
                return details;
           }
 

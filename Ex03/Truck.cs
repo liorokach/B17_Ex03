@@ -21,9 +21,9 @@ namespace Truck
           public override List<string> GetVehicleDetails()
           {
                List<string> details = new List<string>();
+               details.AddRange(base.GetVehicleDetails());
                details.Add(m_hasDangerSubstance.ToString());
                details.Add(m_maxCarryWeight.ToString());
-               details.AddRange(base.GetVehicleDetails());
                return details;
           }
      }

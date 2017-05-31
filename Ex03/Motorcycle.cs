@@ -21,9 +21,9 @@ namespace Motorcycle
           public override List<string> GetVehicleDetails()
           {
                List<string> details = new List<string>();
+               details.AddRange(base.GetVehicleDetails());
                details.Add(e_licence.ToString());
                details.Add(m_engineCapacity.ToString());
-               details.AddRange(base.GetVehicleDetails());
                return details;
           }
      }

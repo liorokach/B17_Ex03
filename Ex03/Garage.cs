@@ -7,6 +7,7 @@ namespace Garage
      using GarageCustomerDetails;
      using enumVehicleStatus;
      using Vehicle;
+     using enumFuelType;
      public class Garage
      {
           private Dictionary<string, GarageCustomerDetails> m_garageDB;
@@ -18,13 +19,13 @@ namespace Garage
 
           public void AddVehicleToGarage(Vehicle i_Vehicle, string i_OwnerName, string i_PhoneNumber)
           {
-               if (!m_garageDB.ContainsKey(i_Vehicle.GetLicenceNumber()))
+               if (!m_garageDB.ContainsKey(i_Vehicle.LicenceNumber))
                {
-                    m_garageDB.Add(i_Vehicle.GetLicenceNumber(), new GarageCustomerDetails(i_Vehicle, i_OwnerName, i_PhoneNumber)); // add new car to the garage
+                    m_garageDB.Add(i_Vehicle.LicenceNumber, new GarageCustomerDetails(i_Vehicle, i_OwnerName, i_PhoneNumber)); // add new car to the garage
                }
                else //// the vehicle exist
                {
-                    m_garageDB[i_Vehicle.GetLicenceNumber()].UpdateStatus(eVehicleStatus.InRepair);
+                    m_garageDB[i_Vehicle.LicenceNumber].Status = eVehicleStatus.InRepair;
                     //// let the user know that the car exist
                }
           }
@@ -33,7 +34,7 @@ namespace Garage
           {
                if (m_garageDB.ContainsKey(i_LicenceNumber)) 
                {
-                    m_garageDB[i_LicenceNumber].UpdateStatus(i_NextStatus);
+                    m_garageDB[i_LicenceNumber].Status = i_NextStatus;
                }
                else //// the vehicle doesn't exist
                {
@@ -41,13 +42,12 @@ namespace Garage
                }
           } 
 
-          public List<string> GetLicenceNumberByStatus(string i_status)
+          public List<string> GetLicenceNumberByStatus(eVehicleStatus i_StatusFilter = eVehicleStatus.None)
           {
-               eVehicleStatus status = (eVehicleStatus)Enum.Parse(typeof(eVehicleStatus), i_status, true);
                List<string> licenceNumbers = new List<string>();
                foreach(var vehicle in m_garageDB)
                {
-                    if(vehicle.Value.GetStatus() == status)
+                    if(vehicle.Value.Status == i_StatusFilter || i_StatusFilter == eVehicleStatus.None)
                     {
                          licenceNumbers.Add(vehicle.Value.GetLicence());
                     }
@@ -67,6 +67,41 @@ namespace Garage
                     ///// not exist - error
                }
                return vehicleDetails;
+          }
+
+          public bool PumpWheelsToMax(string i_LicenceNum)
+          {
+               bool exist = false;
+               if (m_garageDB.ContainsKey(i_LicenceNum))
+               {
+                    m_garageDB[i_LicenceNum].PumpToMax();
+                    exist = true;
+               }
+               return exist;
+          }
+
+          public void ReFuel(string i_LicenceNum, eFuelType i_FuelType, float i_AddAmount)
+          {
+               if (m_garageDB.ContainsKey(i_LicenceNum))
+               {
+                    m_garageDB[i_LicenceNum].ReFuel(i_FuelType, i_AddAmount);
+               }
+               else
+               {
+                    //// not exist exception
+               }
+          }
+
+          public void ReCharge(string i_LicenceNum, float i_AddAmount)
+          {
+               if (m_garageDB.ContainsKey(i_LicenceNum))
+               {
+                    m_garageDB[i_LicenceNum].ReCharge(i_AddAmount);
+               }
+               else
+               {
+                    //// not exist exception
+               }
           }
      }
 }
