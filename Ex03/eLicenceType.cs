@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace enumLicenceType
+namespace eLicenceType
 {
      public enum eLicenceType
      {

@@ -18,6 +18,15 @@ namespace Wheel
                m_maxPressure = i_MaxPressure;
           }
 
+          public static Dictionary<string, Type> GetWheelQuestionsAndTypes()
+          {
+               Dictionary<string, Type> questionsAndTypes = new Dictionary<string, Type>();
+               questionsAndTypes.Add("please enter wheels producer name:", typeof(string));
+               questionsAndTypes.Add("please enter wheels current pressure:", typeof(float));
+               questionsAndTypes.Add("please enter wheels maximum pressure:", typeof(float));
+               return questionsAndTypes;
+          }
+
           public void PumpPressure(float i_AddPressure)
           {
                if (i_AddPressure + m_currentPressure <= m_maxPressure)
@@ -26,7 +35,7 @@ namespace Wheel
                }
                else
                {
-                    ///exeption
+                    //// exception
                }
           }
 

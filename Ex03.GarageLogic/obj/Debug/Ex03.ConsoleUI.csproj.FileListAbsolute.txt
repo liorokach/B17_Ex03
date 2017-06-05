@@ -5,3 +5,18 @@ C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03.GarageLogic\obj\D
 C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03.GarageLogic\obj\Debug\Ex03.GarageLogic.exe
 C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03.GarageLogic\obj\Debug\Ex03.GarageLogic.pdb
 C:\Users\lioro\Documents\Visual Studio 2015\Projects\Ex03\Ex03.GarageLogic\bin\Debug\Ex03.dll
+C:\Users\oznas\Desktop\B17_Ex03-version-1.5\Ex03.GarageLogic\bin\Debug\Ex03.GarageLogic.exe
+C:\Users\oznas\Desktop\B17_Ex03-version-1.5\Ex03.GarageLogic\bin\Debug\Ex03.GarageLogic.pdb
+C:\Users\oznas\Desktop\B17_Ex03-version-1.5\Ex03.GarageLogic\bin\Debug\Ex03.dll
+C:\Users\oznas\Desktop\B17_Ex03-version-1.5\Ex03.GarageLogic\bin\Debug\Ex03.pdb
+C:\Users\oznas\Desktop\B17_Ex03-version-1.5\Ex03.GarageLogic\obj\Debug\Ex03.ConsoleUI.csprojResolveAssemblyReference.cache
+C:\Users\oznas\Desktop\B17_Ex03-version-1.5\Ex03.GarageLogic\obj\Debug\Ex03.GarageLogic.exe
+C:\Users\oznas\Desktop\B17_Ex03-version-1.5\Ex03.GarageLogic\obj\Debug\Ex03.GarageLogic.pdb
+C:\Users\lioro\Downloads\B17_Ex03-version-2.5\B17_Ex03-version-1.5\Ex03.GarageLogic\obj\Debug\Ex03.GarageLogic.exe
+C:\Users\lioro\Downloads\B17_Ex03-version-2.5\B17_Ex03-version-1.5\Ex03.GarageLogic\obj\Debug\Ex03.GarageLogic.pdb
+C:\Users\lioro\Downloads\B17_Ex03-version-2.5\B17_Ex03-version-1.5\Ex03.GarageLogic\bin\Debug\Ex03.GarageLogic.exe.config
+C:\Users\lioro\Downloads\B17_Ex03-version-2.5\B17_Ex03-version-1.5\Ex03.GarageLogic\obj\Debug\Ex03.ConsoleUI.csprojResolveAssemblyReference.cache
+C:\Users\lioro\Downloads\B17_Ex03-version-2.5\B17_Ex03-version-1.5\Ex03.GarageLogic\bin\Debug\Ex03.GarageLogic.exe
+C:\Users\lioro\Downloads\B17_Ex03-version-2.5\B17_Ex03-version-1.5\Ex03.GarageLogic\bin\Debug\Ex03.GarageLogic.pdb
+C:\Users\lioro\Downloads\B17_Ex03-version-2.5\B17_Ex03-version-1.5\Ex03.GarageLogic\bin\Debug\Ex03.dll
+C:\Users\lioro\Downloads\B17_Ex03-version-2.5\B17_Ex03-version-1.5\Ex03.GarageLogic\bin\Debug\Ex03.pdb

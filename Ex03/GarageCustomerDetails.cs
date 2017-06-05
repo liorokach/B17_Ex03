@@ -4,8 +4,9 @@ using System.Text;
 
 namespace GarageCustomerDetails
 {
-     using enumVehicleStatus;
+     using eVehicleStatus;
      using Vehicle;
+     using eFuelType;
      public class GarageCustomerDetails
      {
           private string m_ownerName;
@@ -20,19 +21,9 @@ namespace GarageCustomerDetails
                m_phoneNumber = i_PhoneNum;
           }
 
-          public void UpdateStatus(eVehicleStatus i_NextStatus)
-          {
-               e_repairStatus = i_NextStatus;
-          }
-
-          public eVehicleStatus GetStatus()
-          {
-               return e_repairStatus;
-          }
-
           public string GetLicence()
           {
-               return m_myVehicle.GetLicenceNumber();
+               return m_myVehicle.LicenceNumber;
           }
 
           public void PumpToMax()
@@ -43,9 +34,33 @@ namespace GarageCustomerDetails
           public List<string> GetAllDetails()
           {
                List<string> details = new List<string>();
+               details.Add(m_ownerName);
+               details.Add(m_phoneNumber);
                details.AddRange(m_myVehicle.GetVehicleDetails());
                details.Add(e_repairStatus.ToString());
                return details;
+          }
+
+          public void ReFuel(eFuelType i_FuelType, float i_AddAmount)
+          {
+               m_myVehicle.AddFuel(i_FuelType, i_AddAmount);
+          }
+
+          public void ReCharge(float i_AddAmount)
+          {
+               m_myVehicle.ChargeBattery(i_AddAmount);
+          }
+
+          public eVehicleStatus Status
+          {
+               get
+               {
+                    return e_repairStatus;
+               }
+               set
+               {
+                    e_repairStatus = value;
+               }
           }
      }
 }

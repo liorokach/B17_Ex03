@@ -7,7 +7,9 @@ namespace Vehicle
      using Engine;
      using OnElectricity;
      using OnFuel;
-     using enumFuelType;
+     using eFuelType;
+     using eEngineType;
+     using EnumStatic;
 
      public abstract class Vehicle
      {
@@ -17,7 +19,7 @@ namespace Vehicle
           Engine m_myEngine;
 
           public Vehicle(string i_Model,string i_LicenceID,string i_WheelCompany, int i_NumWheels, float i_CurrPressure,float i_MaxPressure,
-               float i_CurrEnergy,float i_MaxEnergy,string i_FuelType)
+              Engine i_Engine)
           {
                m_licenceNumber = i_LicenceID;
                m_modelName = i_Model;
@@ -25,18 +27,22 @@ namespace Vehicle
                {
                     m_wheels.Add(new Wheel(i_WheelCompany, i_CurrPressure, i_MaxPressure));
                }
-               if (i_FuelType == "electric")
+            m_myEngine = i_Engine;
+          }
+
+          public static Dictionary<string, Type> GetVehicleQuestionsAndTypes(eEngineType i_EngineType)
+          {
+               Dictionary<string, Type> questionsAndTypes = Wheel.GetWheelQuestionsAndTypes();
+               questionsAndTypes.Add("please enter num of wheels:", typeof(int));
+               questionsAndTypes.Add("please enter model name:", typeof(string));
+               questionsAndTypes.Add("please enter Licence ID:", typeof(string));
+               questionsAndTypes.Add("please enter current energy:", typeof(float));
+               questionsAndTypes.Add("please enter maximum energy:", typeof(float));
+               if (i_EngineType == eEngineType.OnFuel)
                {
-                    m_myEngine = new OnElectricity(i_CurrEnergy, i_MaxEnergy);
+                    questionsAndTypes.Add(string.Format("please enter fuel type:\n{0}",EnumStatic.GetInstructionByEnum<eFuelType>()), typeof(eFuelType));
                }
-               else
-               {
-                    eFuelType fuelType = (eFuelType)Enum.Parse(typeof(eFuelType), i_FuelType, true);
-                    if (Enum.IsDefined(typeof(eFuelType), fuelType))
-                    {
-                         m_myEngine = new OnFuel(i_CurrEnergy, i_MaxEnergy, i_FuelType);
-                    }
-               }
+               return questionsAndTypes;
           }
 
           public virtual List<string> GetVehicleDetails()
@@ -49,9 +55,12 @@ namespace Vehicle
                return details; 
           }
 
-          public string GetLicenceNumber()
+          public string LicenceNumber
           {
-               return m_licenceNumber;
+               get
+               {
+                    return m_licenceNumber;
+               }
           }
 
           public void PumpWheels(float i_AddPressure)
@@ -70,5 +79,14 @@ namespace Vehicle
                }
           }
 
+          public void AddFuel(eFuelType i_TypeOfFuel, float i_AmountToAdd)
+          {
+               m_myEngine.Refuel(i_AmountToAdd, i_TypeOfFuel);
+          }
+
+          public void ChargeBattery(float i_AmountToAdd)
+          {
+               m_myEngine.Refuel(i_AmountToAdd);
+          }
      }
 }

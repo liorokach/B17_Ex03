@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace enumNumDoors
+namespace eNumDoors
 {
      public enum eNumDoors
      {
