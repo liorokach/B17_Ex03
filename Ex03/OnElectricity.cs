@@ -4,24 +4,39 @@ using System.Text;
 
 namespace OnElectricity
 {
+     using eFuelType;
      using Engine;
-     using enumFuelType;
 
      public class OnElectricity : Engine
      {
-          public OnElectricity(float i_RemainTime, float i_MaxTime) : base(i_RemainTime, i_MaxTime) { }
-
-          public override void Refuel(float i_AddFuelQuantity, eFuelType i_fuelType)
+          public OnElectricity(float i_RemainTime, float i_MaxTime) : base(i_RemainTime, i_MaxTime)
           {
-               throw new NotImplementedException();
           }
 
           public override List<string> GetEngineDetails()
           {
                List<string> details = new List<string>();
-               details.Add("electric");
+               details.Add("engine type: electric");
                details.AddRange(base.GetEngineDetails());
                return details;
+          }
+
+          public override void Refuel(float i_AmountToAdd, eFuelType i_TypeOfFuel)
+          {
+               throw new NotImplementedException();
+          }
+
+          public override eFuelType FuelType
+          {
+               get
+               {
+                    throw new NotImplementedException();
+               }
+          }
+
+          public override eEngineType.eEngineType EngineType()
+          {
+               return eEngineType.eEngineType.OnElectric;
           }
      }
 }

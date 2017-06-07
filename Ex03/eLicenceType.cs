@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace enumLicenceType
+namespace eLicenceType
 {
      public enum eLicenceType
      {
-          A,
-          AB,
+          A = 1,
+          Ab,
           A2,
           B1
      }
